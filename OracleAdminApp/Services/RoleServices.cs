@@ -59,29 +59,42 @@ namespace OracleAdminApp.Services
             return dataTable;
         }
 
-/*
-        public static List<OracleRole> GetAllRoles()
+        /// <summary>
+        /// Lấy danh sách tất cả role từ DBA_ROLES.
+        /// Dùng OracleHelper cho đồng bộ với các service khác.
+        /// </summary>
+        public static DataTable GetAllRolesTable()
         {
-            const string sql = @"SELECT ROLE, PASSWORD_REQUIRED, AUTHENTICATION_TYPE
-                                 FROM DBA_ROLES
-                                 ORDER BY ROLE";
-            var dt = OracleHelper.ExecuteQuery(sql);
-
-            var roles = new List<OracleRole>();
-            foreach (DataRow row in dt.Rows)
-            {
-                roles.Add(new OracleRole
-                {
-                    RoleName = row["ROLE"]?.ToString(),
-                    PasswordRequired = row["PASSWORD_REQUIRED"]?.ToString(),
-                    Authentication = row["AUTHENTICATION_TYPE"]?.ToString()
-                });
-            }
-
-            return roles;
+            const string sql = @"
+        SELECT ROLE, ROLE_ID, PASSWORD_REQUIRED, AUTHENTICATION_TYPE
+        FROM   DBA_ROLES
+        ORDER  BY ROLE";
+            return OracleHelper.ExecuteQuery(sql);
         }
 
-*/
+        /*
+                public static List<OracleRole> GetAllRoles()
+                {
+                    const string sql = @"SELECT ROLE, PASSWORD_REQUIRED, AUTHENTICATION_TYPE
+                                         FROM DBA_ROLES
+                                         ORDER BY ROLE";
+                    var dt = OracleHelper.ExecuteQuery(sql);
+
+                    var roles = new List<OracleRole>();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        roles.Add(new OracleRole
+                        {
+                            RoleName = row["ROLE"]?.ToString(),
+                            PasswordRequired = row["PASSWORD_REQUIRED"]?.ToString(),
+                            Authentication = row["AUTHENTICATION_TYPE"]?.ToString()
+                        });
+                    }
+
+                    return roles;
+                }
+
+        */
 
         public static OracleRole GetRoleByName(string roleName)
         {
