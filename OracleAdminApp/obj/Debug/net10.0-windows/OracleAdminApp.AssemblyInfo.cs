@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OracleAdminApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4015b67acd5c724fb6af3a7c1017a5f5ec1eca03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b22c901f23fc7cee566fa4d598bad62be9d54b6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("OracleAdminApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OracleAdminApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

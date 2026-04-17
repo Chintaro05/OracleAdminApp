@@ -16,6 +16,9 @@ namespace OracleAdminApp
         public FormMain()
         {
             InitializeComponent();
+
+            gbUser.Visible = false;
+            gbRole.Visible = false;
         }
 
         public FormMain(OracleDbConnection dbConnection) : this()
@@ -33,10 +36,13 @@ namespace OracleAdminApp
                 // Bind to DataGridView
                 dataGridView1.DataSource = users;
                 dataGridView1.AutoResizeColumns();
+
+                gbUser.Visible = true;  // Hiện khung nhập User
+                gbRole.Visible = false; // Ẩn khung nhập Role
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải danh sách người dùng: {ex.Message}", "Lỗi", 
+                MessageBox.Show($"Lỗi khi tải danh sách người dùng: {ex.Message}", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -51,17 +57,20 @@ namespace OracleAdminApp
                 // Bind to DataGridView
                 dataGridView1.DataSource = roles;
                 dataGridView1.AutoResizeColumns();
+
+                gbRole.Visible = true;  // Hiện khung nhập Role
+                gbUser.Visible = false; // Ẩn khung nhập User
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải danh sách role: {ex.Message}", "Lỗi", 
+                MessageBox.Show($"Lỗi khi tải danh sách role: {ex.Message}", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", 
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
