@@ -28,7 +28,7 @@ namespace OracleAdminApp
             try
             {
                 // Load users from database
-                var users = UserServices.GetAllUsers();
+                var users = UserServices.GetAllUsers(_dbConnection);
 
                 // Bind to DataGridView
                 dataGridView1.DataSource = users;
@@ -46,7 +46,7 @@ namespace OracleAdminApp
             try
             {
                 // Load roles from database
-                var roles = RoleServices.GetAllRoles();
+                var roles = RoleServices.GetAllRoles(_dbConnection);
 
                 // Bind to DataGridView
                 dataGridView1.DataSource = roles;
