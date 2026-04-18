@@ -1,6 +1,6 @@
 ﻿namespace OracleAdminApp
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -106,7 +106,7 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // Form1
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -118,9 +118,9 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "FormLogin";
             Text = "Oracle Database Connection";
-            Load += Form1_Load;
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
